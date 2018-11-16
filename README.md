@@ -2,6 +2,13 @@
 #DSCI_522_joshua04_zixinz
 student performance
 
+Members Name and MDS github ID: 
+
+Yenan Zhang   ,    joshua04
+
+Zixin Zhang    ,   _Fill in _
+
+
 dataset URL :
 https://archive.ics.uci.edu/ml/datasets/Student+Performance?fbclid=IwAR2wU2nVAwPfCUkCBoE2_4ePwEwGEOmET4V_93u8ioieo7_3XMeqgGt2vzQ
 
