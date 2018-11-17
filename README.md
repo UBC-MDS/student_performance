@@ -14,8 +14,8 @@ Zixin Zhang (zixinz)
 - Description: The dataset have 30 attribute information and the academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course.
 
 - Proof of loading data: 
-![](./img/load_data_screenshot.png)
-![](./img/hist_finalgrade.png)
+![](./img/load_data_screenshot.png=250x250)
+![](./img/hist_finalgrade.png=250x250)
 
 
 ## Preliminary Question
@@ -26,11 +26,8 @@ Zixin Zhang (zixinz)
 First, perform EDA by making a violin and jitter plot of grades facetted on relationship status.
 
 Second, perform a two group hypothesis tests of mean grade between students in relationships and student who are not.
-
 - Null hypothesis: romantic relationship has no effect on final grade
-
 - Alternative hypothesis: romantic relationshp will change student's final grade
-
 - Significance level: choose alpha=0.05
       
 ## Summarize the data
