@@ -15,11 +15,12 @@ Zixin Zhang (zixinz)
 
 - Proof of loading data:
 ![](./img/load_data_screenshot.png)
-I[](./img/hist_finalgrade.png)
+![](./img/hist_finalgrade.png)
 
 
 ## Preliminary Question
-- Exploratory question: Does romantic relationship influence student's academic performance?
+- Question: Does romantic relationship influence student's academic performance?
+- Type: Exploratory 
 
 ## Plan: 
 First, perform EDA by making a violin and jittor plot of grades facetted on relationship status.
