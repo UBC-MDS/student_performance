@@ -1,12 +1,12 @@
 
-# DSCI_522_joshua04_zixinz
+# Student_Performance
 Data Analysis Project for Student Performance
 
 ## Members Name and MDS github ID: 
 
-Yenan Zhang (joshua04)
+[Yenan Zhang] (https://github.ubc.ca/joshua04)
 
-Zixin Zhang (zixinz)
+[Zixin Zhang](https://github.ubc.ca/zixinz)
 
 ## Dataset
 - Source: https://archive.ics.uci.edu/ml/datasets/Student+Performance
