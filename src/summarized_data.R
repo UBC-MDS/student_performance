@@ -1,10 +1,28 @@
+#! /usr/bin/env Rscript
+#
+# summarized_data.R
+#
+# This script reads in cleaned data register_student.csv and produces an statistical summary table 
+# with visualization.
+#
+# This script takes input and output filepaths as parameters.
+#
+# Input filepath specifies location of the cleaned dataset and output filepath specifies
+# where to save the summary table(.csv file) and the visualized plot (.png file).
+
+# Usage: 
+# Rscript src/summarized_data.R data/registered_student.csv data/summary.csv img/CI_plot.png
+
+# Import libraries
+library(tidyverse)
+library(infer)
+library(dplyr)
+
 # read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)
 input_file <- args[1]
-output_file <- args[2]
-
-library(tidyverse)
-library(infer)
+output_file1 <- args[2]
+output_file2 <- args[3]
 
 # define main function
 main <- function(){
@@ -42,8 +60,9 @@ main <- function(){
     mutate(mean = mean_no,
            romantic = "no")
   
-  # combine summarized data
+  # combine summarized data and return a summary table
   (summarized <- bind_rows(yes_ci, no_ci))
+  write.csv(summarized, file = output_file1)
   
   
   plot=ggplot(data, aes(x = romantic, y = G3)) +
@@ -57,12 +76,11 @@ main <- function(){
     theme_bw() 
  
   # save image
-  png(output_file)
+  png(output_file2)
   plot(plot)
   dev.off()
   
 }
-
 
 # call main function
 main()
