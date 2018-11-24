@@ -1,15 +1,16 @@
-
-
 #! /usr/bin/env Rscript
-# load_data.R
-# # data downloaded from 
-# https://archive.ics.uci.edu/ml/datasets/Student+Performance?fbclid=IwAR2wU2nVAwPfCUkCBoE2_4ePwEwGEOmET4V_93u8ioieo7_3XMeqgGt2vzQ
-# This script takes no arguments.
 #
-# Usage: Rscript load_data.R
+# load_data.R
+#
+# Source from:  
+# https://archive.ics.uci.edu/ml/datasets/Student+Performance?fbclid=IwAR2wU2nVAwPfCUkCBoE2_4ePwEwGEOmET4V_93u8ioieo7_3XMeqgGt2vzQ
+#
+# This script takes input and output filepaths as parameters.
+# Input filepath specifies location of the raw data set and output filepath specifies location of the cleaned dataset.
+#
+# Usage: 
+# Rscript src/load_data.R data/student-mat.csv data/registered_student.csv
 
-
-## part 1
 # read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)
 input_file <- args[1]
@@ -20,8 +21,8 @@ library(tidyverse)
 # define main function
 main <- function(){
   
-  # read in data
-  data <- read.csv("data/student-mat.csv", sep = ";")
+  # read in data "data/student-mat.csv"
+  data <- read.csv(input_file, sep = ";")
   
   # filter out the students who dropped the class
   data <- data %>% 
@@ -30,7 +31,6 @@ main <- function(){
   # write cleaned csv
   write.csv(data, file = output_file)
 }
-
 
 # call main function
 main()
