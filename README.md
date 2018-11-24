@@ -17,10 +17,15 @@ It's common to see that many high school students now are in romantic relationsh
 - **Description:** The dataset have 30 attribute information and three academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course. Based on our question, We are only focusing on these two variables for our analysis: `G3` - final grade (numeric: from 0 to 20, output target) and `romantic` - with a romantic relationship (binary: yes or no).
 
 ## Plan 
-- **First step**: We imported our dataset and made some data wrangling on our dataset.
-- **Second step**: We visualized our dataset using boxplot.
-- **Third step**: We created a table which have statistical summary for two groups of students, one group are the students in relationship and the other group is not. We will report the mean of final grade, sample size, and 95% confidence interval of each group.
-- **Forth step**: We performed a two sample t-test on our dataset and reject the null hypothesis if the p-value is greater than alpha = 0.05. - **Fifth step**: We stated some limitation and expectation on our dataset.
+1. We imported our dataset and made some data wrangling on our dataset. 
+
+2. We visualized our dataset using boxplot.
+
+3. We created a table which have statistical summary for two groups of students, one group are the students in relationship and the other group is not. We will report the mean of final grade, sample size, and 95% confidence interval of each group.
+
+4. We performed a two sample t-test on our dataset and reject the null hypothesis if the p-value is greater than alpha = 0.05. 
+
+5. We stated some limitation and expectation on our dataset.
       
 ## How to Run
 The scripts should be run in the following order:
