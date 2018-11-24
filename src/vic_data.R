@@ -1,5 +1,5 @@
 #! /usr/bin/env Rscript
-#
+# Zixin Zhang, Nov 22, 2018
 # vic_data.R
 #
 # This script reads in cleaned data register_student.csv and produces an exploratory visualization 
