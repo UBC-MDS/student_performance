@@ -13,12 +13,6 @@ Data Analysis Project for Student Performance
 
 - **Description:** The dataset have 30 attribute information and the academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course. The data set involved different kinds of data such as numeric variables, like G3, and categorical vairbales, like romantic. We are focusing on these two variables for our analysis: `G3` - final grade (numeric: from 0 to 20, output target) and `romantic` - with a romantic relationship (binary: yes or no) 
 
-
-- **Proof of loading data:**
-![](./img/load_data_screenshot.png)
-![](./img/hist_finalgrade.png)
-
-
 ## Preliminary Question
 - Question: Does romantic relationship influence student's academic performance?
 - Type: Exploratory 
@@ -33,3 +27,17 @@ Second, perform a two group hypothesis tests of mean grade between students in r
       
 ## Summarize the data
 We will make some data wrangling on our dataset. Then, we will create a table which have statistical summary for two groups of students, one group are the students in relationship and the other group is not. We will report the mean of final grade, sample size, standard deviation and 95% confidence interval of each group. We will also visualize our data by violin plot and jitter plot for the final grade and facetted on relationship status.   
+
+## How to Run
+
+
+```
+Rscript src/load_data.R data/student-mat.csv data/registered_student.csv
+Rscript src/vic_data.R data/registered_student.csv results/boxplot.png
+Rscript src/analyze_data.R data/registered_student.csv data/t_test.csv
+Rscript src/summarized_data.R data/registered_student.csv results/summary.csv results/CI_plot.png
+# knit RMD report
+Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'github_document')"
+Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'pdf_document')"
+Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'html_document')"
+```
