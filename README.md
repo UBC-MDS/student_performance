@@ -4,16 +4,17 @@ Data Analysis Project for Student Performance
 
 ## Members Name and MDS github ID: 
 
-[Yenan Zhang] (https://github.ubc.ca/joshua04)
+[Yenan Zhang](https://github.ubc.ca/joshua04)
 
 [Zixin Zhang](https://github.ubc.ca/zixinz)
 
 ## Dataset
-- Source: https://archive.ics.uci.edu/ml/datasets/Student+Performance
+- **Source:** https://archive.ics.uci.edu/ml/datasets/Student+Performance
 
-- Description: The dataset have 30 attribute information and the academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course.
+- **Description:** The dataset have 30 attribute information and the academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course. The data set involved different kinds of data such as numeric variables, like G3, and categorical vairbales, like romantic. We are focusing on these two variables for our analysis: `G3` - final grade (numeric: from 0 to 20, output target) and `romantic` - with a romantic relationship (binary: yes or no) 
 
-- Proof of loading data: 
+
+- **Proof of loading data:**
 ![](./img/load_data_screenshot.png)
 ![](./img/hist_finalgrade.png)
 
