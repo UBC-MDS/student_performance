@@ -26,6 +26,9 @@ It's common to see that many high school students now are in romantic relationsh
 4. We performed a two sample t-test on our dataset and reject the null hypothesis if the p-value is greater than alpha = 0.05. 
 
 5. We stated some limitation and expectation on our dataset.
+
+## Final Report
+https://github.com/UBC-MDS/student_performance/blob/master/doc/Report.md
       
 ## How to Run
 The scripts should be run in the following order:
