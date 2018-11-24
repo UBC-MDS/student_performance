@@ -29,8 +29,26 @@ Second, perform a two group hypothesis tests of mean grade between students in r
 We will make some data wrangling on our dataset. Then, we will create a table which have statistical summary for two groups of students, one group are the students in relationship and the other group is not. We will report the mean of final grade, sample size, standard deviation and 95% confidence interval of each group. We will also visualize our data by violin plot and jitter plot for the final grade and facetted on relationship status.   
 
 ## How to Run
+The scripts should be run in the following order:
+1. `src/load_data.R` 
 
+input: `data/student-mat.csv`  output: `data/registered_student.csv`
 
+2. `src/vic_data.R`     
+
+input: `data/registered_student.csv`  output: `results/boxplot.png`
+
+3. `src/analyze_data.R`   
+
+input: `data/registered_student.csv` output: `data/t_test.csv`
+
+4. `src/summarized_data.R`    
+
+input: `data/registered_student.csv` output: `results/summary.csv`         output:`results/CI_plot.png`
+
+5. `doc/Report.Rmd`
+
+In command line, these codes will create the entire project. 
 ```
 Rscript src/load_data.R data/student-mat.csv data/registered_student.csv
 Rscript src/vic_data.R data/registered_student.csv results/boxplot.png
