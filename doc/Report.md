@@ -14,7 +14,7 @@ citations).
 
 ## Introduction
 
-It’s common to see that many highschool students now are in romantic
+It’s common to see that many high school students now are in romantic
 relationships. However, some parents think that having romantic
 relationship will influence teenagers’ academic performances. In this
 project, we are interested in conducting research on an exploratory
@@ -65,7 +65,21 @@ the minimum grade is in the group **yes**.
 | 1 | 11.19582 | 12.03265 | no       | 11.63265 | 245 |
 | 2 | 10.75871 | 11.82143 | yes      | 11.28571 | 112 |
 
-## Results
+![](../results/CI_plot.png)
+
+## Hypothesis Testing and Results
+
+To better explore the effect of having an romantic relationship, we
+conduct a two sample Welch’s t-test(
+[Reference](https://en.wikipedia.org/wiki/Welch%27s_t-test): two samples
+have unequal variances and unequal sample sizes).
+
+**Null hypothesis**: romantic relationship has no effect on final grade
+
+**Alternative hypothesis**: romantic relationshp will effect student’s
+final grade
+
+**Significance level**: choose alpha = 0.05
 
 *Table 3. Results of the
 t-test*
@@ -74,6 +88,8 @@ t-test*
 | -: | --------: | --------: | --------: | --------: | -------: | --------: | ----------: | --------: | :---------------------- | :---------- |
 | 1 | 0.3469388 |  11.63265 |  11.28571 | 0.9971016 | 0.319687 |  248.0219 | \-0.3383694 |  1.032247 | Welch Two Sample t-test | two.sided   |
 
-## Limitation
+From the t-test, we have t-statistics = 0.9971016 and p-value =
+0.319687. Since p-value \> alpha = 0.05, we fail to reject the null
+hypothesis that romantic relationship has no effect on final grade.
 
-  -
+## Limitation
