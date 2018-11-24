@@ -59,3 +59,9 @@ Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'github_document
 Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'pdf_document')"
 Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'html_document')"
 ```
+## Dependencies
+`rmarkdown`
+`knitr`
+`tidyverse`
+`broom`
+`infer`
