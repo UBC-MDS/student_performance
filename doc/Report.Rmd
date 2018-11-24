@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 requirement: introduces and justifies your question, introduces the data set, presents the findings/results, and interprets the findings/results in context of the question. Some critique of the analysis is also expected (limitations, assumptions, etc) and a statement of future directions (what would you do next if you had more time to work on this). The report is expected to be 1-2 written pages (excluding figures, tables and references). You are expected to have a reference section and cite 2-3 external sources (data source can be one of these citations).
 
 ## Introduction
-It's common to see that many highschool students now are in romantic relationships. However, some parents think that having romantic relationship will influence teenagers' academic performances. In this project, we are interested in conducting research on an exploratory question - **Does romantic relationship influence student's academic performance?**. 
+It's common to see that many high school students now are in romantic relationships. However, some parents think that having romantic relationship will influence teenagers' academic performances. In this project, we are interested in conducting research on an exploratory question - **Does romantic relationship influence student's academic performance?**. 
 
 We choose the dataset [Student Performance Data Set](https://archive.ics.uci.edu/ml/datasets/Student+Performance) from UCL Machine Learning Repository. The dataset have 30 attribute information and three academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course. Based on our question, We are only focusing on these two variables for our analysis: `G3` - final grade (numeric: from 0 to 20, output target) and `romantic` - with a romantic relationship (binary: yes or no).
 
@@ -41,8 +41,16 @@ summary_table <- read.csv("../results/summary.csv")
 kable(head(summary_table))
 ```
 
+![](../results/CI_plot.png)
 
-## Results
+## Hypothesis Testing and Results
+To better explore the effect of having an romantic relationship, we conduct a two sample Welch's t-test ( [Reference](https://en.wikipedia.org/wiki/Welch%27s_t-test): two samples have unequal variances and unequal sample sizes).
+
+**Null hypothesis**: romantic relationship has no effect on final grade
+
+**Alternative hypothesis**: romantic relationshp will effect student's final grade
+
+**Significance level**: choose alpha = 0.05
 
 *Table 3. Results of the t-test*
 ```{r, echo = FALSE}
@@ -51,6 +59,7 @@ summary_table <- read.csv("../results/t_test.csv")
 kable(head(summary_table))
 ```
 
+From the t-test, we have t-statistics = 0.9971016	and p-value = 0.319687. Since p-value > alpha = 0.05, we fail to reject the null hypothesis that romantic relationship has no effect on final grade. 
+
 ## Limitation
 
-- 
