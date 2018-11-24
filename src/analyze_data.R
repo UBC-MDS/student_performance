@@ -1,5 +1,5 @@
 #! /usr/bin/env Rscript
-#
+# Zixin Zhang, Nov 22, 2018
 # analyze_data.R
 #
 # This script reads in cleaned data register_student.csv and conduct a two-side t-test.
@@ -10,7 +10,7 @@
 # where to save the t-test result summary table(.csv file).
 
 # Usage: 
-# Rscript src/analyze_data.R data/registered_student.csv data/t_test.csv
+# Rscript src/analyze_data.R data/registered_student.csv results/t_test.csv
 
 # Import libraries
 library(broom)

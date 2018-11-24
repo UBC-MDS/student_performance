@@ -1,5 +1,5 @@
 #! /usr/bin/env Rscript
-#
+# Yenan Zhang, Nov 22, 2018
 # summarized_data.R
 #
 # This script reads in cleaned data register_student.csv and produces an statistical summary table 
