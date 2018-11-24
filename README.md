@@ -48,7 +48,11 @@ input: `data/registered_student.csv` output: `results/summary.csv`         outpu
 
 5. `doc/Report.Rmd`
 
-In command line, these codes will create the entire project. 
+In command line, these codes will create the entire project.
+```
+bash run_all.sh
+```
+or
 ```
 Rscript src/load_data.R data/student-mat.csv data/registered_student.csv
 Rscript src/vic_data.R data/registered_student.csv results/boxplot.png
