@@ -8,8 +8,6 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-requirement: introduces and justifies your question, introduces the data set, presents the findings/results, and interprets the findings/results in context of the question. Some critique of the analysis is also expected (limitations, assumptions, etc) and a statement of future directions (what would you do next if you had more time to work on this). The report is expected to be 1-2 written pages (excluding figures, tables and references). You are expected to have a reference section and cite 2-3 external sources (data source can be one of these citations).
-
 ## Introduction
 It's common to see that many high school students now are in romantic relationships. However, some parents think that having romantic relationship will influence teenagers' academic performances. In this project, we are interested in conducting research on an exploratory question - **Does romantic relationship influence student's academic performance?**. 
 
@@ -61,5 +59,17 @@ kable(head(summary_table))
 
 From the t-test, we have t-statistics = 0.9971016	and p-value = 0.319687. Since p-value > alpha = 0.05, we fail to reject the null hypothesis that romantic relationship has no effect on final grade. 
 
-## Limitation
+## Limitations
 
+1. Limited sample: Although we have a total of 357 observations, the number of samples in the two groups are unevenly. Specifically, we have 245 in non-relationship group and only 112 in romantic relationship group. The relative small number (112) in one test group probably reduce the power of our test
+
+2. Limited comparison scale: The final grade has a range of 0 to 20, while this is enough for a test on group means, the difference is certainly less pronounced than a grade scale of 0 to 100. 
+
+3. No control on other variables: Maybe those engaged in relationships all have significantly higher freetime than single students. So the added freetime canceled the negative effect of relationship. We don't know. 
+
+## Future Directions
+1. Increase sample size, especially for students in relationship groups
+2. control on more variables, such as age, free-time, gender, etc. 
+
+## External Sources
+https://archive.ics.uci.edu/ml/datasets/Student+Performance
