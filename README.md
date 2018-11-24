@@ -4,9 +4,9 @@ Data Analysis Project for Student Academic Performance
 
 ## Members Name and MDS github ID: 
 
-[Yenan Zhang](https://github.ubc.ca/joshua04)
+[Yenan Zhang](https://github.ubc.ca/joshua04)   (joshua04)
 
-[Zixin Zhang](https://github.ubc.ca/zixinz)
+[Zixin Zhang](https://github.ubc.ca/zixinz)       (zixinz)
 
 ## Project Motivation
 It's common to see that many high school students now are in romantic relationships. However, some parents think that having romantic relationship will influence teenagers' academic performances. In this project, we are interested in conducting research on an exploratory question - **Does romantic relationship influence student's academic performance**?. 
