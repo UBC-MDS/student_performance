@@ -11,7 +11,7 @@
 # where to save the summary table(.csv file) and the visualized plot (.png file).
 
 # Usage: 
-# Rscript src/summarized_data.R data/registered_student.csv data/summary.csv img/CI_plot.png
+# Rscript src/summarized_data.R data/registered_student.csv results/summary.csv results/CI_plot.png
 
 # Import libraries
 library(tidyverse)
@@ -35,33 +35,37 @@ main <- function(){
     filter(romantic == "yes")
   
   mean_yes <- mean(yes$G3)
+  n_yes <- nrow(yes)
   
   yes_ci <- yes %>% 
     specify(response = G3) %>% 
     generate(reps = 1000)  %>% 
     calculate(stat = "mean")  %>% 
     get_ci() %>% 
-    rename(lower = `2.5%`, upper = `97.5%`) %>% 
-    mutate(mean = mean_yes,
-           romantic = "yes")
+    rename(lower = `2.5%`, upper = `97.5%`) %>%
+    mutate(romantic = "yes",
+           mean = mean_yes,
+           n = n_yes)
   
   # students single 
   no <- data %>% 
     filter(romantic == "no")
   
   mean_no <- mean(no$G3)
+  n_no <- nrow(no)
   
   no_ci <- no %>% 
     specify(response = G3) %>% 
     generate(reps = 1000)  %>% 
     calculate(stat = "mean")  %>% 
     get_ci() %>% 
-    rename(lower = `2.5%`, upper = `97.5%`) %>% 
-    mutate(mean = mean_no,
-           romantic = "no")
+    rename(lower = `2.5%`, upper = `97.5%`) %>%
+    mutate(romantic = "no",
+           mean = mean_no,
+           n = n_no)
   
   # combine summarized data and return a summary table
-  (summarized <- bind_rows(yes_ci, no_ci))
+  (summarized <- bind_rows(no_ci, yes_ci))
   write.csv(summarized, file = output_file1)
   
   
