@@ -1,0 +1,56 @@
+---
+title: "Student Performance Analysis"
+author: "Zixin Zhang, Yenan Zhang"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+requirement: introduces and justifies your question, introduces the data set, presents the findings/results, and interprets the findings/results in context of the question. Some critique of the analysis is also expected (limitations, assumptions, etc) and a statement of future directions (what would you do next if you had more time to work on this). The report is expected to be 1-2 written pages (excluding figures, tables and references). You are expected to have a reference section and cite 2-3 external sources (data source can be one of these citations).
+
+## Introduction
+It's common to see that many highschool students now are in romantic relationships. However, some parents think that having romantic relationship will influence teenagers' academic performances. In this project, we are interested in conducting research on an exploratory question - **Does romantic relationship influence student's academic performance?**. 
+
+We choose the dataset [Student Performance Data Set](https://archive.ics.uci.edu/ml/datasets/Student+Performance) from UCL Machine Learning Repository. The dataset have 30 attribute information and three academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course. Based on our question, We are only focusing on these two variables for our analysis: `G3` - final grade (numeric: from 0 to 20, output target) and `romantic` - with a romantic relationship (binary: yes or no).
+
+```{r, echo = FALSE}
+library(knitr)
+data <- read.csv("../data/registered_student.csv")
+```
+
+*Table 1. Student Performance Dataset*
+```{r, echo = FALSE}
+kable(head(data))
+```
+
+## Visualization
+In order to better visualize our dataset, we choose the boxplot. 
+
+![](../results/boxplot.png)
+
+The boxplot tells us five number summary of `G3` among the two groups of students, with relationship and without relationship. The two groups of student have similar mean of the final grade, but we found that both the 25th percentile and 75th percentile of the group **no** are higher than that of the group **yes**. The maximum grade is in the group **no**, and the minimum grade is in the group **yes**.
+
+## Data summary
+
+*Table 2. Statistical Summary of the Data*
+```{r, echo = FALSE}
+library(knitr)
+summary_table <- read.csv("../results/summary.csv")
+kable(head(summary_table))
+```
+
+
+## Results
+
+*Table 3. Results of the t-test*
+```{r, echo = FALSE}
+library(knitr)
+summary_table <- read.csv("../results/t_test.csv")
+kable(head(summary_table))
+```
+
+## Limitation
+
+- 
