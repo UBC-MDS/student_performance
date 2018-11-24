@@ -1,6 +1,6 @@
 
-# Student_Performance
-Data Analysis Project for Student Performance
+# Student Performance
+Data Analysis Project for Student Academic Performance
 
 ## Members Name and MDS github ID: 
 
@@ -8,28 +8,23 @@ Data Analysis Project for Student Performance
 
 [Zixin Zhang](https://github.ubc.ca/zixinz)
 
-## Dataset
-- **Source:** https://archive.ics.uci.edu/ml/datasets/Student+Performance
+## Project Motivation
+It's common to see that many high school students now are in romantic relationships. However, some parents think that having romantic relationship will influence teenagers' academic performances. In this project, we are interested in conducting research on an exploratory question - **Does romantic relationship influence student's academic performance**?. 
 
-- **Description:** The dataset have 30 attribute information and the academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course. The data set involved different kinds of data such as numeric variables, like G3, and categorical vairbales, like romantic. We are focusing on these two variables for our analysis: `G3` - final grade (numeric: from 0 to 20, output target) and `romantic` - with a romantic relationship (binary: yes or no) 
+## Explore Dataset
+- **Source:** [Student Performance Data Set](https://archive.ics.uci.edu/ml/datasets/Student+Performance)
 
-## Preliminary Question
-- Question: Does romantic relationship influence student's academic performance?
-- Type: Exploratory 
+- **Description:** The dataset have 30 attribute information and three academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course. Based on our question, We are only focusing on these two variables for our analysis: `G3` - final grade (numeric: from 0 to 20, output target) and `romantic` - with a romantic relationship (binary: yes or no).
 
-## Plan
-First, perform EDA by making a violin and jitter plot of grades facetted on relationship status.
-
-Second, perform a two group hypothesis tests of mean grade between students in relationships and student who are not.
-- Null hypothesis: romantic relationship has no effect on final grade
-- Alternative hypothesis: romantic relationshp will change student's final grade
-- Significance level: choose alpha=0.05
+## Plan 
+- **First step**: We imported our dataset and made some data wrangling on our dataset.
+- **Second step**: We visualized our dataset using boxplot.
+- **Third step**: We created a table which have statistical summary for two groups of students, one group are the students in relationship and the other group is not. We will report the mean of final grade, sample size, and 95% confidence interval of each group.
+- **Forth step**: We performed a two sample t-test on our dataset and reject the null hypothesis if the p-value is greater than alpha = 0.05. - **Fifth step**: We stated some limitation and expectation on our dataset.
       
-## Summarize the data
-We will make some data wrangling on our dataset. Then, we will create a table which have statistical summary for two groups of students, one group are the students in relationship and the other group is not. We will report the mean of final grade, sample size, standard deviation and 95% confidence interval of each group. We will also visualize our data by violin plot and jitter plot for the final grade and facetted on relationship status.   
-
 ## How to Run
 The scripts should be run in the following order:
+
 1. `src/load_data.R` 
 
 input: `data/student-mat.csv`  output: `data/registered_student.csv`
@@ -60,8 +55,8 @@ Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'pdf_document')"
 Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'html_document')"
 ```
 ## Dependencies
-`rmarkdown`
-`knitr`
-`tidyverse`
-`broom`
-`infer`
+- `rmarkdown`
+- `knitr`
+- `tidyverse`
+- `broom`
+- `infer`
