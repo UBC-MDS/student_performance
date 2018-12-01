@@ -67,8 +67,8 @@ Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'pdf_document')"
 Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'html_document')"
 ```
 ## Dependencies
-- `rmarkdown`
-- `knitr`
-- `tidyverse`
-- `broom`
-- `infer`
+- `rmarkdown` v1.1
+- `knitr` v1.2
+- `tidyverse`v1.2.1
+- `broom` v0.5.0
+- `infer` v0.3.1
