@@ -12,6 +12,6 @@ Rscript src/analyze_data.R data/registered_student.csv data/t_test.csv
 Rscript src/summarized_data.R data/registered_student.csv results/summary.csv results/CI_plot.png
 
 # knit RMD report
-Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'github_document')"
-Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'pdf_document')"
-Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'html_document')"
+Rscript -e "rmarkdown::render('doc/Report.Rmd', output_format = 'github_document')"
+Rscript -e "rmarkdown::render('doc/Report.Rmd', output_format = 'pdf_document')"
+Rscript -e "rmarkdown::render('doc/Report.Rmd', output_format = 'html_document')"
