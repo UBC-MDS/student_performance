@@ -1,5 +1,6 @@
 # Makefile
 # Zixin Zhang, Nov 30, 2018
+# Yenan Zhang, Nov 30, 2018
 
 # This Makefile script run scripts separately
 # can render tables and plots from the codes of each script in the src folder
@@ -17,12 +18,12 @@ data/registered_student.csv : src/load_data.R data/student-mat.csv
 	Rscript src/load_data.R data/student-mat.csv data/registered_student.csv
 
 # run viz_data.R and output one figure
-results/boxplot.png: src/viz_data.R data/registered_student.csv
+results/boxplot.png: src/vic_data.R data/registered_student.csv
 	Rscript src/vic_data.R data/registered_student.csv results/boxplot.png
 
 # run summarize_data.R and output one table and one plot
-results/summary.csv results/CI_plot.png: src/summarize_data.R data/registered_student.csv
-  Rscript src/summarized_data.R data/registered_student.csv results/summary.csv results/CI_plot.png
+results/summary.csv results/CI_plot.png: src/summarized_data.R data/registered_student.csv
+	Rscript src/summarized_data.R data/registered_student.csv results/summary.csv results/CI_plot.png
 
 # run analyze_data.R and output t-test results
 results/t_test.csv: src/analyze_data.R data/registered_student.csv
@@ -44,6 +45,10 @@ doc/Report.html : doc/Report.Rmd src/load_data.R data/student-mat.csv data/regis
 clean :
 	rm -f data/registered_student.csv
 	rm -f results/boxplot.png
-	rm -f results/summary.csv results/CI_plot.png
+	rm -f results/summary.csv
+	rm -f results/CI_plot.png
 	rm -f results/t_test.csv
-	rm -f doc/Report.md doc/Report.pdf doc/Report.html doc/Report.tex
+	rm -f doc/Report.md
+	rm -f doc/Report.pdf
+	rm -f doc/Report.html
+	rm -f doc/Report.tex
