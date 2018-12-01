@@ -1,5 +1,6 @@
 # Makefile
 # Zixin Zhang, Nov 30, 2018
+# Yenan Zhang, Nov 30, 2018
 
 # This Makefile script run scripts separately
 # can render tables and plots from the codes of each script in the src folder
