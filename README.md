@@ -8,6 +8,17 @@ Data Analysis Project for Student Academic Performance
 
 [Zixin Zhang](https://github.ubc.ca/zixinz)       (zixinz)
 
+## Repo structure
+`data/` contains raw and cleaned data
+
+`doc/` contains the final Report
+
+`results/` contains various plots and summary table(csv)
+
+`src/` contains all the Rscripts
+
+`Makefile` and shell script are in the root directory 
+
 ## Project Motivation
 It's common to see that many high school students now are in romantic relationships. However, some parents think that having romantic relationship will influence teenagers' academic performances. In this project, we are interested in conducting research on an exploratory question - **Does romantic relationship influence student's academic performance**?. 
 
