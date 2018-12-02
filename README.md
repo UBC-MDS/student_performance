@@ -10,9 +10,13 @@ Data Analysis Project for Student Academic Performance
 
 ## Repo structure
 `data/` contains raw and cleaned data
+
 `doc/` contains the final Report
+
 `results/` contains various plots and summary table(csv)
+
 `src/` contains all the Rscripts
+
 `Makefile` and shell script are in the root directory 
 
 ## Project Motivation
