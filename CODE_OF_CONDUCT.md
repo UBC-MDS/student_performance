@@ -1,6 +1,6 @@
 # Repository Covenant Code of Conduct
 
-We the contributors of this repository, assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by authority of the laws of nature and the spirit of science, solemnly publish and declare:
+We the contributors of this repository, assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the name, and by authority of the laws of nature and the spirit of science, solemnly publish and declare:
 
 ## Our Standards
 * Freedom of speech and thoughts: We uphold the constitutional gaurantee of free speech, no agents, foreign or domestic, will be 
