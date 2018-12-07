@@ -1,13 +1,6 @@
-# Contributor Covenant Code of Conduct
+# Repository Covenant Code of Conduct
 
-## Our Pledge
-
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, sex characteristics, gender identity and expression,
-level of experience, education, socio-economic status, nationality, personal
-appearance, race, religion, or sexual identity and orientation.
+We the contributors of this repository, assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by authority of the laws of nature and the spirit of science, solemnly publish and declare:
 
 ## Our Standards
 * Freedom of speech and thoughts: We uphold the constitutional gaurantee of free speech, no agents, foreign or domestic, will be 
