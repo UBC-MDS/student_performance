@@ -1,83 +1,104 @@
 
-# Student Performance
+## Student Performance
 Data Analysis Project for Student Academic Performance
 
-## Members Name and MDS github ID: 
+### Members Name and MDS github ID:
 
 [Yenan Zhang](https://github.ubc.ca/joshua04)   (joshua04)
 
 [Zixin Zhang](https://github.ubc.ca/zixinz)       (zixinz)
 
-## Repo structure
-`data/` contains raw and cleaned data
+### Repo structure
+[`data/`](https://github.com/UBC-MDS/student_performance/tree/master/data) contains raw and cleaned data
 
-`doc/` contains the final Report
+[`doc/`](https://github.com/UBC-MDS/student_performance/tree/master/doc) contains the final Report
 
-`results/` contains various plots and summary table(csv)
+[`results/`](https://github.com/UBC-MDS/student_performance/tree/master/results) contains various plots and summary table(csv)
 
-`src/` contains all the Rscripts
+[`src/`](https://github.com/UBC-MDS/student_performance/tree/master/src) contains all the Rscripts
 
-`Makefile` and shell script are in the root directory 
+[`Makefile`](https://github.com/UBC-MDS/student_performance/blob/master/Makefile) shell script are in the root directory
 
-## Project Motivation
-It's common to see that many high school students now are in romantic relationships. However, some parents think that having romantic relationship will influence teenagers' academic performances. In this project, we are interested in conducting research on an exploratory question - **Does romantic relationship influence student's academic performance**?. 
+### Project Motivation
+It's common to see that many high school students now are in romantic relationships. However, some parents think that having romantic relationship will influence teenagers' academic performances. In this project, we are interested in conducting research on an exploratory question - **Does romantic relationship influence student's academic performance**?.
 
-## Explore Dataset
-- **Source:** [Student Performance Data Set](https://archive.ics.uci.edu/ml/datasets/Student+Performance)
+### Explore Dataset
+We use the data set [Student Performance Data Set](https://archive.ics.uci.edu/ml/datasets/Student+Performance) for our analysis. The dataset have 30 attribute information and three academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course. Based on our question, We are only focusing on these two variables for our analysis: `G3` - final grade (numeric: from 0 to 20, output target) and `romantic` - with a romantic relationship (binary: yes or no).
 
-- **Description:** The dataset have 30 attribute information and three academic grades of students in math course and Portuguese language course. In this analysis, we will use the dataset of students in math course. Based on our question, We are only focusing on these two variables for our analysis: `G3` - final grade (numeric: from 0 to 20, output target) and `romantic` - with a romantic relationship (binary: yes or no).
-
-## Plan 
-1. We imported our dataset and made some data wrangling on our dataset. 
+### Plan
+1. We imported our dataset and made some data wrangling on our dataset.
 
 2. We visualized our dataset using boxplot.
 
 3. We created a table which have statistical summary for two groups of students, one group are the students in relationship and the other group is not. We will report the mean of final grade, sample size, and 95% confidence interval of each group.
 
-4. We performed a two sample t-test on our dataset and reject the null hypothesis if the p-value is greater than alpha = 0.05. 
+4. We performed a two sample t-test on our dataset and reject the null hypothesis if the p-value is greater than alpha = 0.05.
 
 5. We stated some limitation and expectation on our dataset.
 
-## Final Report
-https://github.com/UBC-MDS/student_performance/blob/master/doc/Report.md
-      
-## How to Run
-The scripts should be run in the following order:
+### Usage
+There are two recommended methods of running this analysis:
 
-1. `src/load_data.R` 
+**First Method: Make (without Docker)**
 
-input: `data/student-mat.csv`  output: `data/registered_student.csv`
+1. Clone this repository
 
-2. `src/vic_data.R`     
+2. Run the following commands:
 
-input: `data/registered_student.csv`  output: `results/boxplot.png`
-
-3. `src/analyze_data.R`   
-
-input: `data/registered_student.csv` output: `data/t_test.csv`
-
-4. `src/summarized_data.R`    
-
-input: `data/registered_student.csv` output: `results/summary.csv`         output:`results/CI_plot.png`
-
-5. `doc/Report.Rmd`
-
-In command line, these codes will create the entire project.
 ```
-bash run_all.sh
+# To remove all unnecessary files
+make clean
+
+# To run all necessary scripts for the report
+make all
 ```
-or
+
+The `Makefile` would run the following scripts:
+
 ```
-Rscript src/load_data.R data/student-mat.csv data/registered_student.csv
-Rscript src/vic_data.R data/registered_student.csv results/boxplot.png
-Rscript src/analyze_data.R data/registered_student.csv data/t_test.csv
-Rscript src/summarized_data.R data/registered_student.csv results/summary.csv results/CI_plot.png
-# knit RMD report
-Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'github_document')"
-Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'pdf_document')"
-Rscript -e "rmarkdown::render('doc/report.Rmd', output_format = 'html_document')"
+# run load_data.R, input one raw dataset and output a clean data
+# dependency: tidyverse
+make data/registered_student.csv
+
+# run viz_data.R, input clean data and output one figure
+# dependency: tidyverse
+make results/boxplot.png
+
+# run summarized_data.R, input clean data and output one figure and one table
+# dependency: tidyverse
+make results/summary.csv results/CI_plot.png
+
+# run analyze_data.R, input clean data and output one table
+# dependency: tidyverse, broom
+make results/t_test.csv
+
+# input all above results and render md and html version of the report
+# dependency: rmarkdownm, knitr, tidyverse and infer
+make doc/Report.md doc/Report.html
 ```
-## Dependencies
+
+**Second Method: Docker**
+
+1. Clone this repository
+
+2. Use the command line to navigate to the root of this repo
+
+3. Type the following to run the analysis:
+```
+docker run --rm -v <REPO ABSOLUTE PATH>:/home/rstudio/student_performance student_performance:0.1 make -C
+'/home/rstudio/student_performance' all
+```
+4. Type the following to clean up the analysis:
+```
+docker run --rm -v <REPO ABSOLUTE PATH>:/home/rstudio/student_performance student_performance:0.1 make -C
+'/home/rstudio/student_performance' clean
+```
+You are able to find the [final report](https://github.com/UBC-MDS/student_performance/blob/master/doc/Report.md) in the doc folder after running the script. 
+
+### Dependency Diagram of the Makefile
+![](Makefile.png)
+
+### Dependencies
 - `rmarkdown` v1.1
 - `knitr` v1.2
 - `tidyverse`v1.2.1
