@@ -11,7 +11,7 @@
 # make all
 
 # render the report
-all : doc/Report.md doc/Report.pdf doc/Report.html
+all : doc/Report.md doc/Report.html
 
 # run load_data.R to load the original dataset and output a clean dataset
 data/registered_student.csv : src/load_data.R data/student-mat.csv
@@ -33,10 +33,6 @@ results/t_test.csv: src/analyze_data.R data/registered_student.csv
 doc/Report.md : doc/Report.Rmd src/load_data.R data/student-mat.csv data/registered_student.csv data/registered_student.csv results/boxplot.png results/summary.csv results/CI_plot.png results/t_test.csv
 	Rscript -e "rmarkdown::render('doc/Report.Rmd', output_format = 'github_document')"
 
-# render pdf type of the final report
-doc/Report.pdf : doc/Report.Rmd src/load_data.R data/student-mat.csv data/registered_student.csv data/registered_student.csv results/boxplot.png results/summary.csv results/CI_plot.png results/t_test.csv
-	Rscript -e "rmarkdown::render('doc/Report.Rmd', output_format = 'pdf_document')"
-
 # render html type of the final report
 doc/Report.html : doc/Report.Rmd src/load_data.R data/student-mat.csv data/registered_student.csv data/registered_student.csv results/boxplot.png results/summary.csv results/CI_plot.png results/t_test.csv
 	Rscript -e "rmarkdown::render('doc/Report.Rmd', output_format = 'html_document')"
@@ -48,7 +44,6 @@ clean :
 	rm -f results/summary.csv
 	rm -f results/CI_plot.png
 	rm -f results/t_test.csv
-	rm -f doc/Report.md
-	rm -f doc/Report.pdf
-	rm -f doc/Report.html
+	rm -f doc/Report.md doc/Report.log
 	rm -f doc/Report.tex
+	rm -f doc/Report.html
