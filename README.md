@@ -41,9 +41,9 @@ There are two recommended methods of running this analysis:
 
 **First Method: Make (without Docker)**
 
-1. Clone this repository
+1. Clone this repository [student_performance](https://github.com/UBC-MDS/student_performance)
 
-2. Run the following commands:
+2. Run the following commands in terminal to run the analysis:
 
 ```
 # To remove all unnecessary files
@@ -77,23 +77,26 @@ make results/t_test.csv
 make doc/Report.md doc/Report.html
 ```
 
-**Second Method: Docker**
+**Second Method: Docker (needed Docker installed)**
 
-1. Clone this repository
+1. Clone this repository [student_performance](https://github.com/UBC-MDS/student_performance)
 
-2. Use the command line to navigate to the root of this repo
+2. In terminal, run the following code to download the Docker image
+```
+docker pull zixinz/student_performance
+```
+3. Use the command line to navigate to the root of this project directory
 
-3. Type the following to run the analysis:
+4. Type the following to run the analysis:
 ```
-docker run --rm -v <REPO ABSOLUTE PATH>:/home/rstudio/student_performance student_performance:0.1 make -C
-'/home/rstudio/student_performance' all
+docker run --rm -e PASSWORD=test -v <ABSOLUTE PATH OF REPO>:/home/student_performance zixinz/student_performance make -C '/home/student_performance' all 
 ```
-4. Type the following to clean up the analysis:
+5. Type the following to clean up the analysis:
 ```
-docker run --rm -v <REPO ABSOLUTE PATH>:/home/rstudio/student_performance student_performance:0.1 make -C
-'/home/rstudio/student_performance' clean
+docker run --rm -e PASSWORD=test -v <ABSOLUTE PATH OF REPO>:/home/student_performance zixinz/student_performance make -C '/home/student_performance' clean
 ```
-You are able to find the [final report](https://github.com/UBC-MDS/student_performance/blob/master/doc/Report.md) in the doc folder after running the script. 
+You are able to find the [final report](https://github.com/UBC-MDS/student_performance/blob/master/doc/Report.md) in the doc folder after running the script.
+
 
 ### Dependency Diagram of the Makefile
 ![](Makefile.png)
